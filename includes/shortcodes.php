@@ -341,17 +341,9 @@ function edd_downloads_query($atts, $content = null) {
 			'price' => 'yes',
 			'excerpt' => 'yes',
 			'full_content' => 'no',
-			'excerpt_length' => 30,
 			'buy_button' => 'yes',
-			'style' => 'button',
-			'color' => 'blue',
-			'text' => __('Add to Cart', 'edd'),
 			'columns' => 3,
-			'fallback' => false,
-			'thumbsize' => 'thumbnail',
 			'thumbnails' => 'true',
-			'link_title' => 'yes',
-			'title_wrap' => 'h3',
 			'orderby' => 'post_date',
 			'order' => 'DESC'
 		), $atts )
@@ -427,9 +419,8 @@ function edd_downloads_query($atts, $content = null) {
 
 						do_action( 'edd_download_before' );
 
-						if( 'false' != $thumbnails ) :
+						if( 'false' != $thumbnails )
 							edd_get_template_part( 'shortcode', 'content-image' );
-						endif;
 						
 						edd_get_template_part( 'shortcode', 'content-title' );
 						
